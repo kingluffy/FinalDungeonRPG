@@ -152,6 +152,24 @@ public class Game extends JFrame implements KeyListener{
     public double de_hp = 0;
     public double dfe_hp = 0;
     public double behealthbar = 0;
+    public int e1al = 9;
+    public int e1ah = 13;
+    public int e2al = 4;
+    public int e2ah = 8;
+    public int e3al = 1;
+    public int e3ah = 5;
+    public int e1dl = 5;
+    public int e1dh = 9;
+    public int e2dl = 2;
+    public int e2dh = 5;
+    public int e3dl = 0;
+    public int e3dh = 2;
+    public int e1hl = 60;
+    public int e1hh = 90;
+    public int e2hl = 30;
+    public int e2hh = 60;
+    public int e3hl = 15;
+    public int e3hh = 30;
     public enum room{
         shop,
         dungeon1,
@@ -475,16 +493,16 @@ public class Game extends JFrame implements KeyListener{
                                     }
                                     break;
                                 case 2:
-                                    if (gold >= 30 && r_heal != 20 && m_back == 0) {
-                                        gold = gold - 30;
+                                    if (gold >= 50 && r_heal != 20 && m_back == 0) {
+                                        gold = gold - 50;
                                         r_heal = r_heal + 1;
                                         blink = 0;
                                         gotgold = 1;
                                     }
                                     break;
                                 case 3:
-                                    if (gold >= 80 && b_heal != 20 && m_back == 0) {
-                                        gold = gold - 80;
+                                    if (gold >= 100 && b_heal != 20 && m_back == 0) {
+                                        gold = gold - 100;
                                         b_heal = b_heal + 1;
                                         blink = 0;
                                         gotgold = 1;
@@ -512,6 +530,24 @@ public class Game extends JFrame implements KeyListener{
                                             buy5 = 1;
                                             blink = 0;
                                         }
+                                        e1al = e1al +4;
+                                        e1ah = e1ah + 4;
+                                        e2al = e2al + 4;
+                                        e2ah = e2ah + 4;
+                                        e3al = e3al + 4;
+                                        e3ah = e3ah + 4;
+                                        e1dl = e1dl + 4;
+                                        e1dh = e1dh + 4;
+                                        e2dl = e2dl + 4;
+                                        e2dh = e2dh + 4;
+                                        e3dl = e3dl + 4;
+                                        e3dh = e3dh + 4;
+                                        e1hl = e1hl + 10;
+                                        e1hh = e1hh + 10;
+                                        e2hl = e2hl + 10;
+                                        e2hh = e2hh + 10;
+                                        e3hl = e3hl + 10;
+                                        e3hh = e3hh + 10;
                                     }
                                     break;
                                 case 6:
@@ -561,8 +597,8 @@ public class Game extends JFrame implements KeyListener{
                                     }
                                     break;
                                 case 10:
-                                    if (gold >= 200 && hp != fhp && m_back == 0) {
-                                        gold = gold - 200;
+                                    if (gold >= 180 && hp != fhp && m_back == 0) {
+                                        gold = gold - 180;
                                         hp = fhp;
                                         blink = 0;
                                         gotgold = 1;
@@ -570,7 +606,7 @@ public class Game extends JFrame implements KeyListener{
                                     break;
                                 case 11:
                                     if (gold >= goldcost && buy11 == 0 && m_back == 0) {
-                                        gold = gold - 2000;
+                                        gold = gold - goldcost;
                                         gotgold = 1;
                                         if (goldcost == 2000) {
                                             gold_mult = 2;
@@ -582,6 +618,24 @@ public class Game extends JFrame implements KeyListener{
                                             buy11 = 1;
                                             blink = 0;
                                         }
+                                        e1al = e1al +4;
+                                        e1ah = e1ah + 4;
+                                        e2al = e2al + 4;
+                                        e2ah = e2ah + 4;
+                                        e3al = e3al + 4;
+                                        e3ah = e3ah + 4;
+                                        e1dl = e1dl + 4;
+                                        e1dh = e1dh + 4;
+                                        e2dl = e2dl + 4;
+                                        e2dh = e2dh + 4;
+                                        e3dl = e3dl + 4;
+                                        e3dh = e3dh + 4;
+                                        e1hl = e1hl + 10;
+                                        e1hh = e1hh + 10;
+                                        e2hl = e2hl + 10;
+                                        e2hh = e2hh + 10;
+                                        e3hl = e3hl + 10;
+                                        e3hh = e3hh + 10;
                                     }
                                     break;
                             }
@@ -898,8 +952,9 @@ public class Game extends JFrame implements KeyListener{
                                     break;
                             }
                             encounter = 1;
-                            e_hp = ThreadLocalRandom.current().nextInt(60, 90 + 1);
-                            e_def = ThreadLocalRandom.current().nextInt(5, 9 + 1);
+                            i_up = 0;
+                            e_hp = ThreadLocalRandom.current().nextInt(e1hl, e1hh + 1);
+                            e_def = ThreadLocalRandom.current().nextInt(e1dl, e1dh + 1);
                             fe_hp = e_hp;
                             current_state = game_state.encounter;
                         }
@@ -920,8 +975,9 @@ public class Game extends JFrame implements KeyListener{
                                     break;
                             }
                             encounter = 2;
-                            e_hp = ThreadLocalRandom.current().nextInt(30, 60 + 1);
-                            e_def = ThreadLocalRandom.current().nextInt(2, 5 + 1);
+                            i_up = 0;
+                            e_hp = ThreadLocalRandom.current().nextInt(e2hl, e2hh + 1);
+                            e_def = ThreadLocalRandom.current().nextInt(e2dl, e2dh + 1);
                             fe_hp = e_hp;
                             current_state = game_state.encounter;
                         }
@@ -942,8 +998,9 @@ public class Game extends JFrame implements KeyListener{
                                     break;
                             }
                             encounter = 3;
-                            e_hp = ThreadLocalRandom.current().nextInt(15, 30 + 1);
-                            e_def = ThreadLocalRandom.current().nextInt(0, 2 + 1);
+                            i_up = 0;
+                            e_hp = ThreadLocalRandom.current().nextInt(e3hl, e3hh + 1);
+                            e_def = ThreadLocalRandom.current().nextInt(e3dl, e3dh + 1);
                             fe_hp = e_hp;
                             current_state = game_state.encounter;
                         }
@@ -1264,26 +1321,29 @@ public class Game extends JFrame implements KeyListener{
                                     break;
                             }
                         }
-                        if (425> wo && wo > 335 && 325> wi && wi > 235) {
-                            switch (move) {
-                                case 1:
-                                    wi = 325;
-                                    break;
-                                case 2:
-                                    wi = 235;
-                                    break;
-                                case 3:
-                                    wo = 425;
-                                    break;
-                                case 4:
-                                    wo = 335;
-                                    break;
+                        if(boss_up != 9000) {
+                            if (425 > wo && wo > 335 && 325 > wi && wi > 235) {
+                                switch (move) {
+                                    case 1:
+                                        wi = 325;
+                                        break;
+                                    case 2:
+                                        wi = 235;
+                                        break;
+                                    case 3:
+                                        wo = 425;
+                                        break;
+                                    case 4:
+                                        wo = 335;
+                                        break;
+                                }
+                                encounter = 4;
+                                i_up = 0;
+                                fe_hp = 500;
+                                e_def = 110;
+                                e_hp = fe_hp;
+                                current_state = game_state.encounter;
                             }
-                            encounter = 4;
-                            e_hp = 500;
-                            e_def = 50;
-                            fe_hp = e_hp;
-                            current_state = game_state.encounter;
                         }
                 }
                 break;
@@ -1293,8 +1353,8 @@ public class Game extends JFrame implements KeyListener{
                     if(b_lag == 0) {
                         switch (encounter) {
                             case 1:
-                                e_attack = ThreadLocalRandom.current().nextInt(9, 13 + 1);
-                                if(e_attack < def){
+                                e_attack = ThreadLocalRandom.current().nextInt(e1al,  e1ah + 1);
+                                if(e_attack <= def){
                                     hp = hp - 1;
                                 }else{
                                     hp = (hp - (e_attack - def));
@@ -1302,8 +1362,8 @@ public class Game extends JFrame implements KeyListener{
                                 turn = 1;
                                 break;
                             case 2:
-                                e_attack = ThreadLocalRandom.current().nextInt(4, 8 + 1);
-                                if(e_attack < def){
+                                e_attack = ThreadLocalRandom.current().nextInt(e2al, e2ah + 1);
+                                if(e_attack <= def){
                                     hp = hp - 1;
                                 }else{
                                     hp = (hp - (e_attack - def));
@@ -1311,8 +1371,8 @@ public class Game extends JFrame implements KeyListener{
                                 turn = 1;
                                 break;
                             case 3:
-                                e_attack = ThreadLocalRandom.current().nextInt(1, 5 + 1);
-                                if(e_attack < def){
+                                e_attack = ThreadLocalRandom.current().nextInt(e3al, e3ah + 1);
+                                if(e_attack <= def){
                                  hp = hp - 1;
                                 }else{
                                         hp = (hp - (e_attack - def));
@@ -1320,8 +1380,8 @@ public class Game extends JFrame implements KeyListener{
                                 turn = 1;
                                 break;
                             case 4:
-                                e_attack = ThreadLocalRandom.current().nextInt(20, 30 + 1);
-                                if(e_attack < def){
+                                e_attack = ThreadLocalRandom.current().nextInt(50, 65 + 1);
+                                if(e_attack <= def){
                                     hp = hp - 1;
                                 }else{
                                     hp = (hp - (e_attack - def));
@@ -1540,7 +1600,14 @@ public class Game extends JFrame implements KeyListener{
                             select = 5;
                             break;
                         case KeyEvent.VK_V:
-                            debug = 1;
+                            if (debug == 0) {
+                                debug = 1;
+                                menwait = 1;
+                            }
+                            if(debug == 1 && menwait == 0){
+                                debug = 0;
+                            }
+                            menwait = 0;
                             break;
                     }
                 }
@@ -1907,7 +1974,14 @@ public class Game extends JFrame implements KeyListener{
                         walk_on = 1;
                         break;
                     case KeyEvent.VK_ESCAPE:
-                        current_state = game_state.menu;
+                        switch (show_menu){
+                            case 1:
+                                show_menu = 0;
+                                break;
+                            case 4:
+                                show_menu = 0;
+                                break;
+                        }
                         break;
                     case KeyEvent.VK_I:
                         if (show_menu == 0) {
@@ -1950,6 +2024,16 @@ public class Game extends JFrame implements KeyListener{
                             domove = 1;
                             g_pass = 1;
                             boss_door = 0;
+                        }
+                        menwait = 0;
+                        break;
+                    case KeyEvent.VK_V:
+                        if (debug == 0) {
+                            debug = 1;
+                            menwait = 1;
+                        }
+                        if(debug == 1 && menwait == 0){
+                            debug = 0;
                         }
                         menwait = 0;
                         break;
@@ -2089,110 +2173,27 @@ public class Game extends JFrame implements KeyListener{
             case end:
                 switch (w.getKeyCode()){
                     case KeyEvent.VK_ENTER:
-                        hp = 50;
-                        current_state = game_state.play_game;
-                        current_room = room.shop;
-                        move = 1;
-                        domove = 0;
-                        b_over = 20;
-                        b_up = 500;
-                        hp = 50;
-                        select = 0;
-                        click = 1;
-                        Name_length = 0;
-                        m_up = 397;
-                        access = 0;
-                        b_but = 1;
-                        upppercase = 0;
-                        show_menu = 0;
-                        r_heal = 5;
-                        b_heal = 2;
-                        g_heal = 1;
-                        heal = 0;
-                        i_over = 15;
-                        i_up = 0;
-                        blink = 0;
-                        i_back = 0;
-                        walk_on = 0;
-                        debug = 0;
-                        gold = 0;
-                        bugde = 40;
-                        head = 0;
-                        head_change = 0;
-                        e_up1 = 350;
-                        e_over1 = 180;
-                        e_up2 = 260;
-                        e_over2 = 560;
-                        e_up3 = 90;
-                        e_over3 = 200;
-                        e1 = 0;
-                        e2 = 0;
-                        e3 = 0;
-                        e_move1 = 0;
-                        e_move2 = 0;
-                        e_move3 = 0;
-                        encounter = 0;
-                        e_hp = 0;
-                        fe_hp = 0;
-                        atkl = 3;
-                        int atkh = 8;
-                        int attack = 0;
-                        int def = 0;
-                        int e_def;
+                        wi = 280;
+                        wo = 380;
+                        if(gold >= (1000 * gold_mult)){
+                            gold = gold - (1000 * gold_mult);
+                        }else{
+                            gold = 0;
+                        }
                         xp = 0;
-                        despawn1 = 0;
-                        despawn2 = 0;
-                        despawn3 = 0;
-                        turn = 1;
-                        e_attack = 0;
-                        b_lag = 0;
-                        lvl = 1;
-                        lvlxp = 20;
-                        addxp = 0;
-                        addgold = 0;
-                        addatk = 0;
-                        fhp = 50;
-                        menwait = 0;
-                        pause = 0;
-                        openshop = 0;
-                        m_item = 1;
-                        menu_up = 140;
-                        spawntime = 500;
-                        m_up2 = 140;
-                        msl = 100;
-                        m_back = 0;
-                        xp_mult = 1;
-                        gold_mult = 1;
-                        d_buy = 0;
-                        a_buy = 0;
-                        dprice = 300;
-                        aprice = 400;
-                        vanilla_bean_coolata = 0;
-                        buy5 = 0;
-                        buy8 = 0;
-                        buy9 = 0;
-                        buy11 = 0;
-                        gotgold = 0;
-                        boss_door = 1;
-                        g_pass = 0;
-                        redh = 20;
-                        blueh = 50;
-                        greenh = 80;
-                        xpcost = 1500;
-                        goldcost = 2000;
-                        potion = 0;
-                        skillunlock = 0;
-                        boss_up = 275;
-                        boss_over = 375;
-                        wincolor = 1;
-                        current_state = game_state.menu;
                         current_room = room.shop;
-                        Player_name = Player_name2;
+                        current_state = game_state.play_game;
+                        show_menu = 0;
+                        hp = fhp;
+                        vanilla_bean_coolata = 0;
+                        g_pass = 0;
+                        boss_door = 1;
+                        break;
                 }
                 break;
             case win:
                 switch (w.getKeyCode()) {
-                    case KeyEvent.VK_ENTER:
+                    case KeyEvent.VK_Z:
                         i_up = 295;
                         i_over = 170;
                         select = 0;
@@ -2381,6 +2382,7 @@ public class Game extends JFrame implements KeyListener{
                         g.setColor(Color.GRAY);
                         g.fillRect(60, 340, 10, 190);
                         g.fillRect(60, 520, 680, 10);
+                        g.setColor(Color.green);
                         g.fillRect(boss_over, boss_up, 50, 50);
                         break;
                 }
@@ -2437,7 +2439,7 @@ public class Game extends JFrame implements KeyListener{
                         }
                         g.drawString("Health pack plus", 250, 170);
                         g.setColor(Color.white);
-                        if(gold < 30){
+                        if(gold < 50){
                             g.setColor(Color.gray);
                         }
                         if(r_heal == 20){
@@ -2445,7 +2447,7 @@ public class Game extends JFrame implements KeyListener{
                         }
                         g.drawString("Red Potion", 250, 200);
                         g.setColor(Color.white);
-                        if(gold < 50){
+                        if(gold < 100){
                             g.setColor(Color.gray);
                         }
                         if(b_heal == 20){
@@ -2575,7 +2577,7 @@ public class Game extends JFrame implements KeyListener{
                         g.drawString(Integer.toString(aprice) + "g", 500, 350);
                         g.drawString("10000g", 500, 380);
                         g.drawString("1000g", 500, 410);
-                        g.drawString("200g", 500, 440);
+                        g.drawString("180g", 500, 440);
                         g.drawString(Integer.toString(goldcost) + "g", 500, 470);
                         g.setFont(font5);
                         g.setColor(Color.white);
@@ -2617,7 +2619,8 @@ public class Game extends JFrame implements KeyListener{
                                     g.drawString("...and wait, you need to be level 15 to even buy it?!*", 170, 540);
                                 }
                                 if(vanilla_bean_coolata == 1 && lvl != 100){
-                                    g.drawString("*WHAT DO YOU MEAN I CANT BUY IT AGAIN UNTIL IM LEVEL 100!*", 170, 520);
+                                    g.drawString("*WHAT DO YOU MEAN I CANT BUY IT AGAIN UNTIL", 170, 520);
+                                    g.drawString("IM LEVEL 100!*", 170, 540);
                                 }
                                 if(vanilla_bean_coolata == 1 && lvl >= 100){
                                     g.drawString("*maybe I can use this to fight the boss again*", 170, 520);
@@ -2640,7 +2643,7 @@ public class Game extends JFrame implements KeyListener{
                                         g.drawString("it's not a scam*", 170, 540);
                                         break;
                                     case 5:
-                                        g.drawString("*sold out*", 170, 520);
+                                        g.drawString("*sold out*", 170, 530);
                                         break;
                                 }
                                 break;
@@ -2750,9 +2753,14 @@ public class Game extends JFrame implements KeyListener{
                         g.setColor(Color.white);
                         setFont(font9);
                         if(skillunlock == 1){
+                            g.setColor(Color.white);
+                            if(r_heal < 10 || b_heal < 10 || g_heal < 10){
+                                g.setColor(Color.gray);
+                            }
                             g.drawString("Defense Destroyer", 29, 530);
                         }
                         if (skillunlock == 0) {
+                            g.setColor(Color.white);
                             g.drawString("None", 29, 530);
                         }
                         g.drawString("Back", 29, 560);
@@ -2780,7 +2788,7 @@ public class Game extends JFrame implements KeyListener{
                     case 9:
                         g.setColor(Color.white);
                         g.setFont(font5);
-                        g.drawString("*you have unlocked a new skill! Defence Destroyer cuts the enemy defense", 30, 560);
+                        g.drawString("*you have unlocked a new skill! Defense Destroyer cuts the enemy defense", 30, 560);
                         g.drawString("in half but costs 10 of each potion to use*", 30, 580);
                         g.setFont(font3);
                         g.drawString("press Z to continue", 30, 595);
@@ -2942,6 +2950,9 @@ public class Game extends JFrame implements KeyListener{
             case win:
                 g.setColor(Color.white);
                 g.fillRect(0,0,WIDTH, HEIGHT);
+                g.setFont(font8);
+                g.setColor(Color.black);
+                g.drawString("press z", 350, 550);
                 g.setFont(font7);
                 switch (wincolor){
                     case 1:
