@@ -95,7 +95,7 @@ public class Game extends JFrame implements KeyListener{
     public int e_hp = 0;
     public int fe_hp = 0;
     public int atkl = 3;
-    public int atkh = 8;
+    public int atkh = 800000000;
     public int attack = 0;
     public int def = 0;
     public int e_def;
@@ -127,7 +127,7 @@ public class Game extends JFrame implements KeyListener{
     public int a_buy = 0;
     public int dprice = 300;
     public int aprice = 400;
-    public int vanilla_bean_coolata = 0;
+    public int vanilla_bean_coolata = 1;
     public int buy5 = 0;
     public int buy8 = 0;
     public int buy9 = 0;
@@ -203,7 +203,7 @@ public class Game extends JFrame implements KeyListener{
         }
     }
     public Game(int width, int height, int fps){
-        super("JFrame Demo");
+        super("Chairs;RPG");
         this.MAX_FPS = fps;
         this.WIDTH = width;
         this.HEIGHT = height;
@@ -1478,6 +1478,8 @@ public class Game extends JFrame implements KeyListener{
                     boss_up = 9000;
                     boss_over = 9000;
                     current_state = game_state.play_game;
+                    wo = 375;
+                    wi = 275;
                 }
                 if(blink == 1 && i_over == 420){
                     move = 1;
@@ -1576,6 +1578,24 @@ public class Game extends JFrame implements KeyListener{
                     current_state = game_state.menu;
                     current_room = room.shop;
                     Player_name = Player_name2;
+                    e1al = 9;
+                    e1ah = 13;
+                    e2al = 4;
+                    e2ah = 8;
+                    e3al = 1;
+                    e3ah = 5;
+                    e1dl = 5;
+                    e1dh = 9;
+                    e2dl = 2;
+                    e2dh = 5;
+                    e3dl = 0;
+                    e3dh = 2;
+                    e1hl = 60;
+                    e1hh = 90;
+                    e2hl = 30;
+                    e2hh = 60;
+                    e3hl = 15;
+                    e3hh = 30;
                 }
                 break;
         }
