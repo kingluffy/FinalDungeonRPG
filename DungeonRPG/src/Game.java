@@ -1,5 +1,5 @@
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.event.KeyEvent;
@@ -388,6 +388,7 @@ public class Game extends JFrame implements KeyListener{
             i_back = 0;
             show_menu = 0;
         }
+
         switch(current_state) {
             case play_game:
                 potion = 0;
@@ -1599,6 +1600,9 @@ public class Game extends JFrame implements KeyListener{
                 }
                 break;
         }
+        if (potion == 0 ){
+            blink = 0;
+        }
         }
     @Override
     public void keyTyped(KeyEvent keyEvent) {
@@ -2437,7 +2441,12 @@ public class Game extends JFrame implements KeyListener{
                     g.fillRect((int) i_over, (int) i_up, 20, 30);
                     if (select > 0) {
                         g.setColor(Color.white);
-                        g.fillRect((int) i_over, (int) i_up, 250, 30);
+                        if(current_state == game_state.encounter) {
+                            g.fillRect((int) i_over, (int) i_up, 250, 30);
+                        }
+                        if(current_state == game_state.play_game) {
+                            g.fillRect((int) i_over, (int) i_up, 270, 30);
+                        }
                         select = select - 1;
                         if (select == 1) {
                             select = 0;
@@ -2589,8 +2598,8 @@ public class Game extends JFrame implements KeyListener{
                         g.setColor(Color.cyan);
                         g.drawString("20000xp", 500, 170);
                         g.setColor(Color.yellow);
-                        g.drawString("30g", 500, 200);
-                        g.drawString("80g", 500, 230);
+                        g.drawString("50g", 500, 200);
+                        g.drawString("100g", 500, 230);
                         g.drawString("150g", 500, 260);
                         g.drawString(Integer.toString(xpcost) + "g", 500, 290);
                         g.drawString(Integer.toString(dprice) + "g", 500, 320);
