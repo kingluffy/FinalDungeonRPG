@@ -1,0 +1,22 @@
+open .zip and then open the master folder
+drag and drop "DungeonRPG" only to Program Files
+go to C:\Program Files\DungeonRPG\out\artifacts\DungeonRPG_jar
+drag and drop "Chairs;RPG" to desktop
+click "Chairs;RPG" to run
+_________________________________________________________________
+
+_______________________________________________________________________
+Controls:
+Keyboard keys (A-Z and the number keys "1" and "0" only) to type name
+WASD keys to move player or move in menu
+I to open/close potions menu
+V to toggle debug menu on/off (it just displays a bunch of variables that don't mean anything to you)
+H to switch hair
+K to toggle hair on/off
+Enter to select, confirm, or continue (most of the time)
+Z to confirm or continue (in very few certain instances)
+ESC to hide menu (but I prefer it if you use the back buttons I worked hard on to impliment)
+
+!!IMPORTANT!! [theres a glitch that if you have the potions menu open and you have 0 of the potion you select
+and then move to a potion that you do have and your hp isn't full, it will use it. if you accidentally select when 
+you have 0 of that potion just close the menu and open it again]
