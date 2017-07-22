@@ -208,11 +208,11 @@ public class Game extends JFrame implements KeyListener{
         this.WIDTH = width;
         this.HEIGHT = height;
         try{
-            hair = ImageIO.read(new File("super_hair.png"));
-            g_hair = ImageIO.read(new File("goku_hair.png"));
-            slime = ImageIO.read(new File("slime.png"));
-            dontsuemesaur = ImageIO.read(new File("Humungousaur.png"));
-            anthrax = ImageIO.read(new File("anthrax.png"));
+            hair = ImageIO.read(new File("C:\\Program Files\\DungeonRPG\\super_hair.png"));
+            g_hair = ImageIO.read(new File("C:\\Program Files\\DungeonRPG\\goku_hair.png"));
+            slime = ImageIO.read(new File("C:\\Program Files\\DungeonRPG\\slime.png"));
+            dontsuemesaur = ImageIO.read(new File("C:\\Program Files\\DungeonRPG\\Humungousaur.png"));
+            anthrax = ImageIO.read(new File("C:\\Program Files\\DungeonRPG\\anthrax.png"));
         } catch(IOException e){
             e.printStackTrace();
         }
@@ -1885,6 +1885,9 @@ public class Game extends JFrame implements KeyListener{
                             Name_length = 0;
                             break;
                         case KeyEvent.VK_ENTER:
+                            current_room = room.shop;
+                            wo = 380;
+                            wi= 280;
                             current_state = game_state.play_game;
                             break;
                         case KeyEvent.VK_1:
