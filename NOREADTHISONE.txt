@@ -1,5 +1,6 @@
 open .zip and then open the master folder
 drag and drop "DungeonRPG" only to Program Files
+go to C:\Program Files\DungeonRPG and double click "Adobe Dia" then install the font
 go to C:\Program Files\DungeonRPG\out\artifacts\DungeonRPG_jar
 drag and drop "Chairs;RPG" to desktop
 click "Chairs;RPG" to run
