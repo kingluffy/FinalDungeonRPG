@@ -17,6 +17,4 @@ Enter to select, confirm, or continue (most of the time)
 Z to confirm or continue (in very few certain instances)
 ESC to hide menu (but I prefer it if you use the back buttons I worked hard on to impliment)
 
-!!IMPORTANT!! [theres a glitch that if you have the potions menu open and you have 0 of the potion you select
-and then move to a potion that you do have and your hp isn't full, it will use it. if you accidentally select when 
-you have 0 of that potion just close the menu and open it again]
+
