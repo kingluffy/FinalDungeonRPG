@@ -95,7 +95,7 @@ public class Game extends JFrame implements KeyListener{
     public int e_hp = 0;
     public int fe_hp = 0;
     public int atkl = 3;
-    public int atkh = 800000000;
+    public int atkh = 8;
     public int attack = 0;
     public int def = 0;
     public int e_def;
@@ -127,7 +127,7 @@ public class Game extends JFrame implements KeyListener{
     public int a_buy = 0;
     public int dprice = 300;
     public int aprice = 400;
-    public int vanilla_bean_coolata = 1;
+    public int vanilla_bean_coolata = 0;
     public int buy5 = 0;
     public int buy8 = 0;
     public int buy9 = 0;
@@ -203,7 +203,7 @@ public class Game extends JFrame implements KeyListener{
         }
     }
     public Game(int width, int height, int fps){
-        super("Chairs;RPG");
+        super("Chairs;RPGs");
         this.MAX_FPS = fps;
         this.WIDTH = width;
         this.HEIGHT = height;
